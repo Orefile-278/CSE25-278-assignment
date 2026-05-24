@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products – Vol Tech</title>
+  <link rel="stylesheet" href="style 2.css">
+</head>
+<body>
+  <div class="page">
+
+    <nav>
+      <div class="logo-box">Vol Tech</div>
+      <a href="online phone store.html" class="nav-link">Home</a>
+      <a href="product page.html" class="nav-link active">Products</a>
+      <a href="about page.html" class="nav-link">About</a>
+      <a href="contact page.html" class="nav-link">Contact</a>
+      <div class="nav-spacer"></div>
+      <div class="nav-search"><span style="font-size:12px">🔍</span> Search +</div>
+      <div class="nav-icon">🛒</div>
+    </nav>
+
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+      <button class="filter-btn" onclick="setFilter('samsung',this)">Samsung</button>
+      <button class="filter-btn" onclick="setFilter('apple',this)">Apple</button>
+      <button class="filter-btn" onclick="setFilter('huawei',this)">Huawei</button>
+      <select class="sort-select" onchange="sortProducts(this.value)">
+        <option value="default">Sort: Default</option>
+        <option value="price-low">Price: Low → High</option>
+        <option value="price-high">Price: High → Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+
+    <div class="main-wrap">
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Brand</div>
+          <label class="sidebar-item"><input type="checkbox" checked> Samsung <span class="count">5</span></label>
+          <label class="sidebar-item"><input type="checkbox" checked> Apple <span class="count">6</span></label>
+          <label class="sidebar-item"><input type="checkbox" checked> Huawei <span class="count">3</span></label>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">Price Range</div>
+          <div class="price-labels">
+            <span>P0</span><span id="priceVal">P25,000</span>
+          </div>
+          <input type="range" min="0" max="25000" value="25000" step="500"
+            oninput="document.getElementById('priceVal').textContent='P'+parseInt(this.value).toLocaleString()">
+        </div>
+      </aside>
+
+      <div class="products-area">
+        <p class="products-count">Showing <strong id="countShown">14</strong> of <strong>3</strong> products</p>
+
+        <div class="prod-grid" id="productGrid">
+
+          <div class="product-card" data-brand="apple" data-price="8000" data-5g="true">
+            <div class="p-img"><img src="images/Iphone 14.webp" alt="iPhone 14"></div>
+            <div class="p-name">iPhone 14</div>
+            <div class="p-sub">Blue</div>
+            <div class="p-price">P8,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="samsung" data-price="10000" data-5g="true">
+            <div class="p-img"><img src="images/Galaxy S22.webp" alt="Galaxy S22"></div>
+            <div class="p-name">Galaxy S22 Ultra</div>
+            <div class="p-sub">Burgundy</div>
+            <div class="p-price">P10,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="apple" data-price="9000" data-5g="true">
+            <div class="p-img"><img src="images/Iphone 13 pro.png" alt="iPhone 13 Pro"></div>
+            <div class="p-name">iPhone 13 Pro</div>
+            <div class="p-sub">Black</div>
+            <div class="p-price">P9,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          
+          <div class="product-card" data-brand="huawei" data-price="8500" data-5g="false">
+            <div class="p-img"><img src="images/huaweip50pro - Copy.jpg" alt="Huawei P50 Pro"></div>
+            <div class="p-name">Huawei P50 Pro</div>
+            <div class="p-sub">Purple</div>
+            <div class="p-price">P8,500</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="apple" data-price="22000" data-5g="false">
+            <div class="p-img"><img src="images/iphone 17.webp" alt="Iphone 17"></div>
+            <div class="p-name">Iphone 17</div>
+            <div class="p-sub">Black</div>
+            <div class="p-price">P22000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="apple" data-price="25000" data-5g="false">
+            <div class="p-img"><img src="images/iphone-17-pro.jpg" alt="Iphone 17 pro"></div>
+            <div class="p-name">Iphone 17 pro</div>
+            <div class="p-sub">white</div>
+            <div class="p-price">P25,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="samsung" data-price="10000" data-5g="false">
+            <div class="p-img"><img src="images/samsung-galaxy-s23.webp" alt="samsung s23"></div>
+            <div class="p-name">samsung s23</div>
+            <div class="p-sub">white</div>
+            <div class="p-price">P10,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="samsung" data-price="8000" data-5g="false">
+            <div class="p-img"><img src="images/samsung galaxy S21.avif" alt="samsung s21"></div>
+            <div class="p-name">samsung s21</div>
+            <div class="p-sub">Black</div>
+            <div class="p-price">P8,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="huawei" data-price="12000" data-5g="false">
+            <div class="p-img"><img src="images/Huawei-Mate-X7.jpg" alt="Huawei mate X7"></div>
+            <div class="p-name">Huawei mate X7</div>
+            <div class="p-sub">Red</div>
+            <div class="p-price">P12,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+        <div class="product-card" data-brand="huawei" data-price="11000" data-5g="false">
+            <div class="p-img"><img src="images/Huawei-Mate-X6.jpg" alt="Huawei mate X6"></div>
+            <div class="p-name">Huawei mate X6</div>
+            <div class="p-sub">Black</div>
+            <div class="p-price">P11,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="samsung" data-price="5000" data-5g="false">
+            <div class="p-img"><img src="images/samsung galaxy tab s11.jpeg" alt="samsung Tab S11"></div>
+            <div class="p-name">samsung Tab S11</div>
+            <div class="p-sub">grey</div> 
+            <div class="p-price">P5,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="samsung" data-price="7000" data-5g="false">
+            <div class="p-img"><img src="images/galaxy-tab-a9.webp" alt="samsung Tab A9"></div>
+            <div class="p-name">samsung Tab A9</div>
+            <div class="p-sub">grey</div>
+            <div class="p-price">P7,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="apple" data-price="8500" data-5g="false">
+            <div class="p-img"><img src="images/ipad air 11.png" alt="ipad air 11"></div>
+            <div class="p-name">ipad air 11</div>
+            <div class="p-sub">light Blue</div>
+            <div class="p-price">P8,500</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-card" data-brand="apple" data-price="9000" data-5g="false">
+            <div class="p-img"><img src="images/ipad air 5.webp" alt="Apple ipad Air 5"></div>
+            <div class="p-name">Apple ipad Air</div>
+            <div class="p-sub">dark Blue</div>
+            <div class="p-price">P9,000</div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="contact page.html">FAQs</a></li>
+            <li><a href="contact page.html">Returns Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div style="font-size:12px;color:#777;margin-bottom:6px;">77043092</div>
+          <div style="font-size:12px;color:#777;">kagomotshereganyi07@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-bar">© 2026 Vol Tech. All rights reserved.</div>
+    </footer>
+
+  </div>
+
+  <script>
+    let activeFilter = 'all';
+    function setFilter(filter, btn) {
+      activeFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterProducts();
+    }
+    function filterProducts() {
+      const cards = document.querySelectorAll('.product-card');
+      let shown = 0;
+      cards.forEach(card => {
+        const brand = card.dataset.brand;
+        const price = parseInt(card.dataset.price);
+        const is5g = card.dataset['5g'] === 'true';
+        let visible = true;
+        if (activeFilter === 'samsung' && brand !== 'samsung') visible = false;
+        if (activeFilter === 'apple' && brand !== 'apple') visible = false;
+        if (activeFilter === 'huawei' && brand !== 'huawei') visible = false;
+        if (activeFilter === 'under3000' && price >= 3000) visible = false;
+        if (activeFilter === '5g' && !is5g) visible = false;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+      document.getElementById('countShown').textContent = shown;
+    }
+    function sortProducts(val) {
+      const grid = document.getElementById('productGrid');
+      const cards = [...grid.querySelectorAll('.product-card')];
+      cards.sort((a, b) => {
+        if (val === 'price-low') return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+        if (val === 'price-high') return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+        if (val === 'name') return a.querySelector('.p-name').textContent.localeCompare(b.querySelector('.p-name').textContent);
+        return 0;
+      });
+      cards.forEach(c => grid.appendChild(c));
+    }
+    document.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
