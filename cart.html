@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart – Vol Tech</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="stlye5.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo-box">Vol Tech</div>
+      <a href="online phone store.html" class="nav-link">Home</a>
+      <a href="product page.html" class="nav-link">Products</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="contact page.html" class="nav-link">Contact</a>
+      <div class="nav-spacer"></div>
+      <div class="nav-search"><span style="font-size:12px">🔍</span> Search +</div>
+      <div class="nav-icon-wrap">
+        <a href="cart.html" style="text-decoration:none;">
+          <div class="nav-icon" style="background:#1a1a2e;color:#fff;border-color:#1a1a2e;">🛒</div>
+        </a>
+        <span class="cart-badge" id="nav-badge">3</span>
+      </div>
+    
+    </nav>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="filterBy('all',this)">All</button>
+      <button class="filter-btn" onclick="filterBy('samsung',this)">Samsung</button>
+      <button class="filter-btn" onclick="filterBy('apple',this)">Apple</button>
+      <button class="filter-btn" onclick="filterBy('huawei',this)">Huawei</button>
+      <button class="filter-btn" onclick="filterBy('5g',this)">5G</button>
+      <select class="sort-select" onchange="sortCart(this.value)">
+        <option value="default">Sort: Default</option>
+        <option value="price-low">Price: Low → High</option>
+        <option value="price-high">Price: High → Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+
+    <!-- MAIN WRAP -->
+    <div class="main-wrap">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Cart Items</div>
+          <div id="sidebar-mini"></div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Order Summary</div>
+          <div class="os-row"><span>Subtotal</span><span id="os-sub">P0</span></div>
+          <div class="os-row"><span>Shipping</span><span id="os-ship">Free</span></div>
+          <div class="os-row"><span>Tax (10%)</span><span id="os-tax">P0</span></div>
+          <hr class="os-divider"/>
+          <div class="os-total"><span>Total</span><span id="os-total">P0</span></div>
+          <div class="promo-row">
+            <input type="text" placeholder="Promo code" id="promo-input"/>
+            <button onclick="applyPromo()">Apply</button>
+          </div>
+          <button class="btn-checkout" onclick="checkout()">Checkout →</button>
+          <p class="os-note">🔒 Secure · Free returns</p>
+          <a href="product page.html" class="continue-link">← Continue Shopping</a>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Price Range</div>
+          <div class="price-labels">
+            <span>P0</span><span id="priceVal">P10,000</span>
+          </div>
+          <input type="range" min="0" max="10000" value="10000" step="500"
+            oninput="document.getElementById('priceVal').textContent='P'+parseInt(this.value).toLocaleString()">
+        </div>
+
+      </aside>
+
+      <!-- PRODUCTS AREA -->
+      <div class="products-area">
+
+        <div class="cart-header">
+          <div class="cart-header-left">
+            <span class="cart-heading">Shopping Cart</span>
+            <span class="item-badge" id="item-badge">3 ITEMS</span>
+          </div>
+          <button class="btn-clear" onclick="clearCart()">Clear All</button>
+        </div>
+
+        <div id="cart-list"></div>
+
+        <div id="sug-section">
+          <div class="sug-label">You Might Also Like</div>
+          <div class="sug-grid">
+            <div class="sug-card">
+              <div class="sug-emoji">📱</div>
+              <div class="sug-name">OnePlus 12</div>
+              <div class="sug-price">P6,500</div>
+              <button onclick="showToast('OnePlus 12 added to cart!')">+ Add to Cart</button>
+            </div>
+            <div class="sug-card">
+              <div class="sug-emoji">📱</div>
+              <div class="sug-name">Xiaomi 14</div>
+              <div class="sug-price">P7,000</div>
+              <button onclick="showToast('Xiaomi 14 added to cart!')">+ Add to Cart</button>
+            </div>
+            <div class="sug-card">
+              <div class="sug-emoji">📱</div>
+              <div class="sug-name">Sony Xperia 5</div>
+              <div class="sug-price">P7,500</div>
+              <button onclick="showToast('Sony Xperia 5 added to cart!')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Returns Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div style="font-size:12px;color:#777;margin-bottom:6px;">77043092</div>
+          <div style="font-size:12px;color:#777;">kagomotshereganyi07@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-bar">© 2026 Vol Tech. All rights reserved.</div>
+    </footer>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="cart.js"></script>
+</body>
+</html>

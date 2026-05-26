@@ -1,0 +1,190 @@
+/* cart.css — Cart-specific styles for Vol Tech */
+/* Requires style 2.css to be loaded first      */
+
+/* ── Mini cart list in sidebar ── */
+.mini-cart-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mini-cart-item:last-child { border-bottom: none; }
+.mini-thumb {
+  width: 32px; height: 32px;
+  background: #f5f5fa;
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.mini-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.mini-name  { font-size: 11px; font-weight: 700; }
+.mini-price { font-size: 10px; color: #888; }
+
+/* ── Order summary box ── */
+.os-row {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: #888; margin-bottom: 5px;
+}
+.os-row span:last-child { color: #111; font-weight: 600; }
+.os-divider { border: none; border-top: 1px solid #eee; margin: 7px 0; }
+.os-total {
+  display: flex; justify-content: space-between;
+  font-size: 12px; font-weight: 700; margin-bottom: 10px;
+}
+.promo-row { display: flex; gap: 5px; margin-bottom: 8px; }
+.promo-row input {
+  flex: 1; border: 1px solid #ccc; border-radius: 2px;
+  padding: 4px 7px; font-size: 10px; outline: none;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.promo-row input:focus { border-color: #1a1a2e; }
+.promo-row button {
+  background: #1a1a2e; color: #fff; border: none;
+  border-radius: 2px; padding: 4px 8px;
+  font-size: 10px; font-weight: 700; cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.promo-row button:hover { background: #2d2d50; }
+.btn-checkout {
+  width: 100%; background: #1a1a2e; color: #fff; border: none;
+  border-radius: 2px; padding: 8px 0;
+  font-size: 10px; font-weight: 700; cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.btn-checkout:hover { background: #2d2d50; }
+.os-note { text-align: center; font-size: 10px; color: #bbb; margin-top: 6px; }
+.continue-link {
+  display: block; text-align: center; margin-top: 7px;
+  font-size: 10px; color: #888; text-decoration: none;
+}
+.continue-link:hover { text-decoration: underline; }
+
+/* ── Cart item cards ── */
+.cart-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ci-img {
+  width: 80px; height: 80px;
+  background: #f5f5fa; border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ci-img img { width: 100%; height: 100%; object-fit: contain; }
+.ci-name  { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+.ci-sub   { font-size: 11px; color: #999; margin-bottom: 5px; }
+.ci-price { font-size: 13px; font-weight: 700; }
+.ci-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; }
+.qty-wrap {
+  display: flex; align-items: center;
+  border: 1px solid #ccc; border-radius: 2px; overflow: hidden;
+}
+.qty-wrap button {
+  background: #fafafa; border: none;
+  width: 26px; height: 26px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  color: #333;
+}
+.qty-wrap button:hover { background: #1a1a2e; color: #fff; }
+.qty-wrap span {
+  min-width: 26px; text-align: center;
+  font-size: 11px; font-weight: 700;
+  border-left: 1px solid #ccc; border-right: 1px solid #ccc;
+  line-height: 26px;
+}
+.ci-remove {
+  background: none; border: none;
+  font-size: 10px; color: #aaa; cursor: pointer;
+  text-decoration: underline; text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ci-remove:hover { color: #c0392b; }
+
+/* ── Cart header row ── */
+.cart-header {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 10px;
+}
+.cart-header-left { display: flex; align-items: center; gap: 7px; }
+.cart-heading { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.item-badge {
+  background: #1a1a2e; color: #fff;
+  font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+.btn-clear {
+  background: none; border: 1px solid #ccc; border-radius: 2px;
+  padding: 3px 9px; font-size: 10px; color: #999; cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.btn-clear:hover { border-color: #c0392b; color: #c0392b; }
+
+/* ── Empty state ── */
+.cart-empty {
+  background: #fff; border: 1px solid #ddd; border-radius: 5px;
+  padding: 40px 20px; text-align: center;
+}
+.cart-empty .e-icon { font-size: 2.5rem; margin-bottom: 8px; }
+.cart-empty h3 { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+.cart-empty p  { font-size: 11px; color: #999; }
+.cart-empty a {
+  display: inline-block; margin-top: 12px;
+  background: #1a1a2e; color: #fff;
+  padding: 7px 16px; border-radius: 2px;
+  text-decoration: none; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.cart-empty a:hover { background: #2d2d50; }
+
+/* ── Suggestions ── */
+.sug-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #999; margin: 14px 0 8px;
+}
+.sug-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.sug-card {
+  background: #fff; border: 1px solid #ddd; border-radius: 5px;
+  padding: 10px; text-align: center;
+}
+.sug-emoji { font-size: 1.6rem; margin-bottom: 5px; }
+.sug-name  { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+.sug-price { font-size: 11px; color: #888; margin-bottom: 6px; }
+.sug-card button {
+  width: 100%; background: #fafafa; border: 1px solid #ccc;
+  border-radius: 2px; padding: 4px;
+  font-size: 10px; font-weight: 700; cursor: pointer;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.sug-card button:hover { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+
+/* ── Nav cart icon & badge ── */
+.nav-icon-wrap { position: relative; margin-left: 4px; flex-shrink: 0; }
+.cart-badge {
+  position: absolute; top: -4px; right: -4px;
+  background: #c0392b; color: #fff;
+  font-size: 9px; font-weight: 700;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Toast notification ── */
+.toast {
+  position: fixed; bottom: 20px; left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: #1a1a2e; color: #fff;
+  padding: 7px 18px; border-radius: 2px;
+  font-size: 11px; font-weight: 600;
+  opacity: 0; transition: all 0.3s; z-index: 999;
+  pointer-events: none; letter-spacing: 0.05em;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
